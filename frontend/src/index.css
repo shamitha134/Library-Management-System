@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans:wght@400;500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .container {
+    @apply max-w-[1920px] mx-auto;
+  }
+}
+
+.button-one {
+  --button-color: #333;
+}
+
+.button-one .line {
+  transition: y 200ms ease-in 200ms, rotate 200ms ease-in, opacity 0ms 200ms;
+  transform-origin: center;
+}
+
+.button-one[aria-expanded="true"] .line {
+  transition: y 200ms ease-in, rotate 200ms ease-in 200ms, opacity 0ms 200ms;
+}
+
+.button-one[aria-expanded="true"] :is(.top, .bottom) {
+  y: 45;
+}
+
+.button-one[aria-expanded="true"] .top {
+  rotate: 45deg;
+}
+
+.button-one[aria-expanded="true"] .middle {
+  opacity: 0;
+}
+
+.button-one[aria-expanded="true"] .bottom {
+  rotate: -45deg;
+}
